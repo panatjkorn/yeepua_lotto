@@ -1,0 +1,45 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      [
+        "build",
+        "--build-arg=BASE_URL_API=$_BASE_URL_API", 
+        "-t",
+        "$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$BRANCH_NAME",
+        "-f",
+        "Dockerfile",
+        ".",
+      ]
+    id: Build
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - "$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$BRANCH_NAME"
+    id: Push
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    args:
+      - run
+      - services
+      - update
+      - $_SERVICE_NAME
+      - "--platform=managed"
+      - "--image=$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$BRANCH_NAME"
+      - "--region=$_DEPLOY_REGION"
+      - "--quiet"
+    id: Deploy
+    entrypoint: gcloud
+timeout: 1200s
+images:
+  - "$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$BRANCH_NAME"
+options:
+  substitutionOption: ALLOW_LOOSE
+substitutions:
+  _SERVICE_NAME: lottery-admin-web-dev
+  _DEPLOY_REGION: asia-southeast1
+  _GCR_HOSTNAME: asia.gcr.io
+  _PLATFORM: managed,
+  _BUILD_ENV: dev
+tags:
+  - gcp-cloud-build-deploy-cloud-run
+  - gcp-cloud-build-deploy-cloud-run-managed
+
