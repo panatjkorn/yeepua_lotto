@@ -2,22 +2,7 @@
   <div>
     <div class="grid grid-cols-12 gap-6 mt-5">
       <div class="col-span-12 lg:col-span-4 p-3 grid">
-        <!-- <div class="w-36 h-36 image-fit justify-self-center">
-          <img
-            alt="profile-image"
-            class="rounded-full"
-            :src="dataNormalUser ? dataNormalUser.image_url : ''"
-          />
-        </div> -->
         <div class="justify-self-center">
-          <!-- <div class="w-36 h-36 image-fit ml-auto mr-auto">
-            <img
-            alt="profile-image"
-            class="rounded-full"
-            :src="dataNormalUser ? dataNormalUser.image_url : ''"
-          />
-          </div> -->
-          
           <span class="mt-3 lg:mt-2 text-xl grid justify-center">
             <b v-if="dataNormalUser.user_detail">{{ dataNormalUser.user_detail.first_name }} {{ dataNormalUser.user_detail.last_name }}</b>
           </span>
@@ -31,7 +16,7 @@
               }"
               @click="getDataAllTab(1)"
               >
-              <ActivityIcon class="w-4 h-4 mr-2" /> ข้อมูลส่วนตัว
+              <ActivityIcon class="w-4 h-4 mr-2" /> ข้อมูล
             </a>
             <!-- ******* -->
             <a
@@ -42,7 +27,7 @@
               'menu-background text-white mb-px': openTab === 2,
             }"
             @click="getDataAllTab(2)">
-              <BoxIcon class="w-4 h-4 mr-2" /> บัญชีรับเงินรางวัล
+              <BoxIcon class="w-4 h-4 mr-2" /> บัญชี
             </a>
             <a
               class="flex items-center mt-5 py-2 rounded-md text-center p-3"
@@ -53,7 +38,7 @@
             }"
             @click="getDataAllTab(3)"
             >
-              <LockIcon class="w-4 h-4 mr-2" /> ประวัติการซื้อ
+              <LockIcon class="w-4 h-4 mr-2" /> สมาชิก
             </a>
             <a class="flex items-center mt-5 py-2 rounded-md text-center p-3"
               href="javascript:;"
@@ -62,7 +47,7 @@
               'menu-background text-white mb-px': openTab === 4,
             }"
             @click="getDataAllTab(4)">
-            <SettingsIcon class="w-4 h-4 mr-2" /> ประวัติการถูกรางวัล
+            <SettingsIcon class="w-4 h-4 mr-2" /> ประวัติการฝาก
             </a>
             <a class="flex items-center mt-5 py-2 rounded-md text-center p-3"
               href="javascript:;"
@@ -71,7 +56,7 @@
               'menu-background text-white mb-px': openTab === 5,
             }"
             @click="getDataAllTab(5)">
-            <Minimize2Icon class="w-4 h-4 mr-2" /> ประวัติการฝากเงิน
+            <Minimize2Icon class="w-4 h-4 mr-2" /> ประวัติการถอน
             </a>
             <a class="flex items-center mt-5 py-2 rounded-md text-center p-3"
               href="javascript:;"
@@ -80,7 +65,7 @@
               'menu-background text-white mb-px': openTab === 6,
             }"
             @click="getDataAllTab(6)">
-              <Maximize2Icon class="w-4 h-4 mr-2" /> ประวัติการถอนเงิน
+              <Maximize2Icon class="w-4 h-4 mr-2" /> ประวัติการซื้อ
             </a>
             <a class="flex items-center mt-5 py-2 rounded-md text-center p-3"
               href="javascript:;"
@@ -89,7 +74,7 @@
               'menu-background text-white mb-px': openTab === 7,
             }"
             @click="getDataAllTab(7)">
-              <AwardIcon class="w-4 h-4 mr-2" /> ประวัติการได้รับ point
+              <AwardIcon class="w-4 h-4 mr-2" /> ประวัติการถูกรางวัล
             </a>
             <a class="flex items-center mt-5 py-2 rounded-md text-center p-3"
               href="javascript:;"
@@ -98,59 +83,19 @@
               'menu-background text-white mb-px': openTab === 8,
             }"
             @click="getDataAllTab(8)">
-              <ClipboardIcon class="w-4 h-4 mr-2" /> ประวัติการได้รับโบนัส
-            </a>
-          </div>
-        </div>
-        <!-- <div class="justify-self-center">
-          <span class="mt-3 lg:mt-2 text-xl grid justify-center">
-            <b v-if="dataNormalUser.user_detail">{{ dataNormalUser.user_detail.first_name }} {{ dataNormalUser.user_detail.last_name }}</b>
-          </span>
-          <div class="p-5 border-t border-gray-200 dark:border-dark-5">
-            <a
-              class="flex items-center py-2 rounded-md text-center p-3"
-              href="javascript:;"
-              :class="{
-                'bg-white-900': openTab !== 1,
-                'menu-background text-white mb-px': openTab === 1,
-              }"
-              @click="getDataAllTab(1)"
-              >
-              <ActivityIcon class="w-4 h-4 mr-2" /> ข้อมูลส่วนตัว
-            </a>
-
-            <a
-              class="flex items-center mt-5 py-2 rounded-md text-center p-3"
-              href="javascript:;"
-              :class="{
-              'bg-white-900': openTab !== 2,
-              'menu-background text-white mb-px': openTab === 2,
-            }"
-            @click="getDataAllTab(2)">
-              <BoxIcon class="w-4 h-4 mr-2" /> บัญชีรับเงินรางวัล
-            </a>
-            <a
-              class="flex items-center mt-5 py-2 rounded-md text-center p-3"
-              href="javascript:;"
-              :class="{
-              'bg-white-900': openTab !== 3,
-              'menu-background text-white mb-px': openTab === 3,
-            }"
-            @click="getDataAllTab(3)"
-            >
-              <LockIcon class="w-4 h-4 mr-2" /> ประวัติการซื้อ
+              <ClipboardIcon class="w-4 h-4 mr-2" /> ประวัติค่าคอม
             </a>
             <a class="flex items-center mt-5 py-2 rounded-md text-center p-3"
               href="javascript:;"
               :class="{
-              'bg-white-900': openTab !== 4,
-              'menu-background text-white mb-px': openTab === 4,
+              'bg-white-900': openTab !== 9,
+              'menu-background text-white mb-px': openTab === 9,
             }"
-            @click="getDataAllTab(4)">
-            <SettingsIcon class="w-4 h-4 mr-2" /> ประวัติการถูกรางวัล
+            @click="getDataAllTab(9)">
+              <StarIcon class="w-4 h-4 mr-2" /> ประวัติโบนัส
             </a>
           </div>
-        </div> -->
+        </div>
       </div>
       <!-- ข้อมูลส่วนตัว -->
       <div class="col-span-12 lg:col-span-8 p-3 lg:mt-3">
@@ -167,8 +112,24 @@
           @modalAddUserBookBank="modalAddUserBookBank"
           />
 
+        <HistoryDepositList 
+          v-if="openTab == 4"
+          :data-deposit-list="dataDepositList"
+          :dropdown-status-deposit="ddFilterDepositList"
+          :filter-status-deposit="filterStatusDeposit"
+          @filterStatusDeposit="getDepositList"
+        />
+
+        <HistoryWithdrawList 
+          v-if="openTab == 5"
+          :data-withdraw-list="dataWithdrawList"
+          :dropdown-status-withdraw="ddFilterWithdrawList"
+          :filter-status-withdraw="filterStatusWithdraw"
+          @filterWithdrawList="getWithdrawList"
+        />
+
         <HistoryBillsUser
-          v-if="openTab == 3"
+          v-if="openTab == 6"
           :data-bills-user="dataBillsUser"
           :dropdown-lotto-type="dd_lottoType"
           :dropdown-lotto-round="dd_lotto_round"
@@ -178,7 +139,7 @@
         />
 
         <HistoryUserWonLotto
-          v-if="openTab == 4"
+          v-if="openTab == 7"
           :data-show-bills-won="dataShowBillWon"
           :dropdown-lotto-type="dd_lottoType"
           :dropdown-lotto-round="dd_lotto_round"
@@ -187,55 +148,19 @@
           @filterHistoryWonLotto="filterHistoryWonLotto"
         />
 
-        <HistoryDepositList 
-          v-if="openTab == 5"
-          :data-deposit-list="dataDepositList"
-          :dropdown-status-deposit="ddFilterDepositList"
-          :filter-status-deposit="filterStatusDeposit"
-          @filterStatusDeposit="getDepositList"
-        />
-        
-        <HistoryWithdrawList 
-          v-if="openTab == 6"
-          :data-withdraw-list="dataWithdrawList"
-          :dropdown-status-withdraw="ddFilterWithdrawList"
-          :filter-status-withdraw="filterStatusWithdraw"
-          @filterWithdrawList="getWithdrawList"
-        />
-
-        <HistoryUserReceivePoint 
-          v-if="openTab == 7"
-          :history-receive-point="dataHistoryReceivePoint"
+        <HistoryCommission 
+          v-if="openTab == 8"
         />
 
         <HistoryUserReceiveBonus 
-          v-if="openTab == 8"
+          v-if="openTab == 9"
           :data-user-receive-bonus="dataUserReceiveBonus"
         />
 
         <div class="grid lg:grid-cols-3 gap-4 mt-3">
-          <t-pagination
-            v-if="openTab == 3"
-            v-model="currentPageBills"
-            :total-items="totalItemBills"
-            :per-page="itemPerPageBills"
-            :limit="7"
-            :disabled="false"
-            @input="handleTogglePageBills()"
-          />
-
+          
           <t-pagination
             v-if="openTab == 4"
-            v-model="currentPageBillsWon"
-            :total-items="totalItemBillsWon"
-            :per-page="itemPerPageBillsWon"
-            :limit="7"
-            :disabled="false"
-            @input="handleTogglePageBillsWon()"
-          />
-
-          <t-pagination
-            v-if="openTab == 5"
             v-model="currentPageDeposit"
             :total-items="totalItemDeposit"
             :per-page="itemPerPageDeposit"
@@ -244,8 +169,8 @@
             @input="handleTogglePageDeposit()"
           />
 
-          <t-pagination
-            v-if="openTab == 6"
+           <t-pagination
+            v-if="openTab == 5"
             v-model="currentPageWithdraw"
             :total-items="totalItemWithdraw"
             :per-page="itemPerPageWithdraw"
@@ -255,17 +180,27 @@
           />
 
           <t-pagination
-            v-if="openTab == 7"
-            v-model="currentPageReceivePoint"
-            :total-items="totalItemReceivePoint"
-            :per-page="itemPerPageReceivePoint"
+            v-if="openTab == 6"
+            v-model="currentPageBills"
+            :total-items="totalItemBills"
+            :per-page="itemPerPageBills"
             :limit="7"
             :disabled="false"
-            @input="handleTogglePageReceivePoint()"
+            @input="handleTogglePageBills()"
           />
 
           <t-pagination
-            v-if="openTab == 8"
+            v-if="openTab == 7"
+            v-model="currentPageBillsWon"
+            :total-items="totalItemBillsWon"
+            :per-page="itemPerPageBillsWon"
+            :limit="7"
+            :disabled="false"
+            @input="handleTogglePageBillsWon()"
+          />
+
+          <t-pagination
+            v-if="openTab == 9"
             v-model="currentPageReceiveBonus"
             :total-items="totalItemReceiveBonus"
             :per-page="itemPerPageReceiveBonus"
@@ -310,8 +245,8 @@ import HistoryBillsUser from '@/components/User/detail/HistoryBillsUser';
 import HistoryUserWonLotto from '@/components/User/detail/HistoryUserWonLotto';
 import HistoryDepositList from '@/components/User/detail/HistoryDepositList';
 import HistoryWithdrawList from '@/components/User/detail/HistoryWithdrawList';
-import HistoryUserReceivePoint from '@/components/User/detail/HistoryUserReceivePoint';
 import HistoryUserReceiveBonus from '@/components/User/detail/HistoryUserReceiveBonus';
+import HistoryCommission from '@/components/User/detail/HistoryCommission';
 
 import ModalShowLottoWon from '@/components/Modal/User/ModalShowLottoWon';
 import ModalShowBillUser from '@/components/Modal/User/ModalShowBillUser';
@@ -335,8 +270,8 @@ export default {
     ModalConfirm,
     HistoryDepositList,
     HistoryWithdrawList,
-    HistoryUserReceivePoint,
-    HistoryUserReceiveBonus
+    HistoryUserReceiveBonus,
+    HistoryCommission
   },
   mixins: [ alertMixins ],
   data() {
@@ -383,10 +318,6 @@ export default {
       totalItemWithdraw : 0,
       itemPerPageWithdraw : 20,
       currentPageApiWithdraw : 0,
-      currentPageReceivePoint : 1,
-      totalItemReceivePoint : 0,
-      itemPerPageReceivePoint : 20,
-      currentPageApiReceivePoint : 0,
       dataHistoryReceivePoint : '',
       dataUserReceiveBonus : '',
       currentPageReceiveBonus : 1,
@@ -438,11 +369,6 @@ export default {
       this.currentPageApiWithdraw = this.currentPageWithdraw - 1;
       this.getWithdrawList();
     },
-    
-    handleTogglePageReceivePoint() {
-      this.currentPageApiReceivePoint = this.currentPageReceivePoint - 1;
-      this.getUserReceivePoint();
-    },
 
     handleTogglePageReceiveBonus() {
       this.currentPageApiReceiveBonus = this.currentPageReceiveBonus - 1;
@@ -463,27 +389,30 @@ export default {
 
     getDataAllTab(status) {
       this.clearDataPagination();
-      // this.clearPageWhenSwitchTabStatus();
       this.openTab = status;
       if(this.openTab == 1) {
         this.getDataPersonalUser();
       } else if(this.openTab == 2) {
         this.getDataBankUser();
       } else if(this.openTab == 3) {
-        this.getDataHistoryUserBuyLotto();
+        
       } else if(this.openTab == 4) {
-        this.getDataHistoryBillWonLotto();
-      } else if(this.openTab == 5) {
+        
         this.filterStatusDeposit = '';
         this.getFilterDepositStatus();
         this.getDepositList();
-      } else if(this.openTab == 6) {
+      } else if(this.openTab == 5) {
         this.filterStatusWithdraw = ''
         this.getFilterWithdrawStatus();
         this.getWithdrawList();
+      } else if(this.openTab == 6) {
+        this.getDataHistoryUserBuyLotto();
       } else if(this.openTab == 7) {
-        this.getUserReceivePoint();
+        this.getDataHistoryBillWonLotto();
+        // this.getUserReceivePoint();
       } else if(this.openTab == 8) {
+        
+      } else if(this.openTab == 9) {
         this.getUserReceiveBonus();
       }
     },
@@ -616,24 +545,6 @@ export default {
         const getDropdownWithdrawStatus = await this.$axios.get(url);
         // console.log('getDropdownWithdrawStatus',getDropdownWithdrawStatus);
         this.ddFilterWithdrawList = getDropdownWithdrawStatus.data.data;
-      } catch(err) {
-        console.log(err);
-      }
-    },
-
-    //get ประวัติการได้รับพ้อย user tab 7
-    async getUserReceivePoint() {
-      const url = `admin_manage_user/users/${this.user_ID}/receive_points`
-      const params = {
-        page : parseInt(this.currentPageApiReceivePoint),
-        limit : parseInt(this.itemPerPageReceivePoint),
-      }
-
-      try {
-        const getReceivePoint = await this.$axios.get(url,{params:params});
-        // console.log('getReceivePoint',getReceivePoint);
-        this.totalItemReceivePoint = getReceivePoint.data.data.total;
-        this.dataHistoryReceivePoint = getReceivePoint.data.data;
       } catch(err) {
         console.log(err);
       }

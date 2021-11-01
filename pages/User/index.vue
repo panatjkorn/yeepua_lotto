@@ -3,9 +3,10 @@
     <div class="col-span-12 mt-8">
       <div class="intro-y flex items-center h-10">
         <div>
-          <span class="lg:text-lg">จัดการข้อมูลสมาชิก</span>
+          <span class="lg:text-lg">จัดการข้อมูลยี่ปั๊ว</span>
         </div>
-        <div class="ml-auto">
+        <div class="ml-auto flex">
+          <button class="btn bg-blue-500 text-white mr-2">เพิ่มยี่ปั๊ว</button>
           <div class="search hidden sm:block">
             <input
               v-model="search"
@@ -28,12 +29,9 @@
       <div class="box p-5 relative overflow-y-hidden">
         <div class="intro-y flex items-center h-10">
           <div>
-            <span class="lg:text-lg"><b>รายการสมาชิก</b></span>
+            <span class="lg:text-lg"><b>รายชื่อยี่ปั๊ว</b></span>
           </div>
           <div class="ml-auto">
-            <!-- <select class="sm:ml-auto mt-3 sm:mt-0 sm:w-auto form-select box">
-              <option value="">100</option>
-            </select> -->
             <span class="lg:text-lg">ทั้งหมด {{ count_user }} คน</span>
           </div>
         </div>
@@ -71,9 +69,6 @@
                 <td>{{ data.balance_credit }}</td>
                 <td>{{ data.balance_points }}</td>
                 <td>{{ data.create_at }}</td>
-                <td>
-                  {{ data.agent_regis ? data.agent_regis.agent_code : "" }}
-                </td>
                 <td>
                   {{ data ? data.count_topup_fail : "" }}
                 </td>
@@ -143,9 +138,8 @@ export default {
           { label: "ยอดซื้อ" },
           { label: "ยอดถูกรางวัล" },
           { label: "จำนวนเงินของ user" },
-          { label: "จำนวน point ของ user" },
+          { label: "คอมมิชชัน" },
           { label: "วันที่สมัคร" },
-          { label: "สมัครผ่านตัวแทน" },
           { label: "เติมเงินไม่สำเร็จ (ครั้ง)" },
           { label: "ตัวเลือก" },
         ],

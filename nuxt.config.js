@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'admin หวยหงส์ฟ้า',
+    title: 'yee_pua',
     htmlAttrs: {
       lang: 'en'
     },
@@ -126,7 +126,7 @@ export default {
         },
         endpoints: {
           login: {
-              url: 'admin/login',
+              url: 'admins/login',
               method: 'post'
           },
           user: false,
