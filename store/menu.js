@@ -34,16 +34,16 @@ let data_menu = [
         icon: "",
         pageName: "",
         path : "/finance/withdrawMoneyList",
-        title: "รายการถอนเงินลูกค้า",
+        title: "รายการถอนเงินยี่ปั๊ว",
         id : 2
       },
-      {
-        icon: "",
-        pageName: "WithdrawListAgent",
-        path : "/finance/withdrawMoneyAgent/",
-        title: "รายการถอนเงินตัวแทน",
-        id : 3
-      },
+      // {
+      //   icon: "",
+      //   pageName: "WithdrawListAgent",
+      //   path : "/finance/withdrawMoneyAgent/",
+      //   title: "รายการถอนเงินตัวแทน",
+      //   id : 3
+      // },
       {
         icon: "",
         pageName: "TopupPendingList",
@@ -70,19 +70,27 @@ let data_menu = [
   {
     icon: 'SidebarIcon',
     path: '/User',
-    title: 'ข้อมูลสมาชิก',
+    title: 'ข้อมูลยี่ปั๊ว',
     iconId : 4,
     id : 6,
     isHaveSubmenu : false
   },
-  {
-    icon: 'SidebarIcon',
-    path: '/agent',
-    title: 'ข้อมูลตัวแทน',
-    iconId : 5,
-    id : 7,
-    isHaveSubmenu : false
-  },
+  // {
+  //   icon: 'SidebarIcon',
+  //   path: '/User',
+  //   title: 'ข้อมูลสมาชิก',
+  //   iconId : 4,
+  //   id : 6,
+  //   isHaveSubmenu : false
+  // },
+  // {
+  //   icon: 'SidebarIcon',
+  //   path: '/agent',
+  //   title: 'ข้อมูลตัวแทน',
+  //   iconId : 5,
+  //   id : 7,
+  //   isHaveSubmenu : false
+  // },
   {
     icon: 'SidebarIcon',
     path: '/bonus',

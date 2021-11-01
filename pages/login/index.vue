@@ -27,13 +27,13 @@
               class="-intro-x text-white font-medium text-4xl leading-tight mt-10 grid"
             >
             <img class="justify-self-center" :src="require(`@/assets/images/blueswan.png`)" alt="">
-              <span class="flex justify-center">หงส์ฟ้าพารวย</span> <br />
+              <span class="flex justify-center">ยี่ปั๊ว</span> <br />
               <!-- sign in to your account. -->
             </div>
             <div
               class="-intro-x text-lg text-white text-opacity-70 dark:text-gray-500 flex justify-center"
             >
-              โปรแกรมการจัดการหวย
+              โปรแกรมการจัดการยี่ปั๊ว
             </div>
           </div>
         </div>
@@ -48,10 +48,10 @@
             >
               เข้าสู่ระบบ
             </h2>
-            <div class="intro-x mt-2 text-gray-500 xl:hidden text-center">
+            <!-- <div class="intro-x mt-2 text-gray-500 xl:hidden text-center">
               A few more clicks to sign in to your account. Manage all your
               e-commerce accounts in one place
-            </div>
+            </div> -->
             <div class="intro-x mt-8">
               <input
                 v-model="username"

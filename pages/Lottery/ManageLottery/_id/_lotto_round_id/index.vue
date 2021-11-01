@@ -322,8 +322,8 @@ export default {
   },
   async created() {
     this.openTab = parseInt(this.$route.query.tab);
-    this.lottery_type_ID = this.$route.params.id;
-    this.lottery_round_ID = this.$route.params.lotto_round_id;
+    this.lottery_type_ID = parseInt(this.$route.params.id);
+    this.lottery_round_ID = parseInt(this.$route.params.lotto_round_id);
     await this.getLottoRoundByID();
     await this.getDataLottoRoundTab(this.openTab);
     this.getFilterLottoType();

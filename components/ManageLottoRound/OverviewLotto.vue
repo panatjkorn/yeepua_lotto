@@ -67,7 +67,10 @@
         </div> -->
       </div>
       <div class="grid grid-flow-col grid-cols-1 gap-4 mt-5 ">
-        <div class="grid-rows-2 text-green-600 p-2 border-2 border-gray-400">
+        <div
+        :class="{'text-green-500' : lotteryReport.balance && lotteryReport.balance.system_profit >= 0,
+        'text-red-500' : lotteryReport.balance && lotteryReport.balance.system_profit < 0}" 
+        class="grid-rows-2 p-2 border-2 border-gray-400">
           <div>
             <h2 class="lg:text-3xl">ยอดคงเหลือ</h2>
           </div>
